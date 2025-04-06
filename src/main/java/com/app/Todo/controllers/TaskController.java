@@ -21,7 +21,7 @@ public class TaskController {
     @GetMapping
     public String getTasks(Model model){
         List<Task> tasks = taskService.getAllTasks();
-        model.addAttribute("tasks", tasks);
+        model.addAttribute("tasks", tasks.reversed());
         return "tasks";
     }
     @PostMapping
